@@ -1,0 +1,636 @@
+// Variables and Helpers
+@import 'fonts';
+@import 'variables';
+@import 'helpers';
+@import 'animations';
+
+// Fontawsome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Custom partials
+@import 'partials/header';
+@import 'partials/navigation';
+
+html {
+    scroll-behavior: smooth;
+    font-display: swap;
+    min-width: 400px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+    font-display: swap;
+}
+
+#app {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 50px; // height of the footer
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+    }
+
+    .mobile-cart-container {
+        min-height: 65px;
+    }
+
+    .bottom-footer {
+
+        margin-bottom: 65px;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.lead {
+    font-size: 0.8125rem;
+}
+
+.font-weight-bold {
+    font-weight: 500 !important;
+}
+
+.font-weight-bolder {
+    font-weight: 600 !important;
+}
+
+.font-family-open-sans {
+    font-display: swap;
+    font-family: 'Open Sans', sans-serif;
+}
+
+*, .fa, .fas {
+    font-display: swap;
+}
+
+.text-muted {
+    color: #BBBBBB !important;
+}
+
+.cursor-pointer {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.line-height-1-1 {
+    line-height: 1.1 !important;
+}
+
+.line-height-1-2 {
+    line-height: 1.2 !important;
+}
+
+.line-height-1-4 {
+    line-height: 1.4 !important;
+}
+
+.line-height-1-5 {
+    line-height: 1.5 !important;
+}
+
+.line-height-1-6 {
+    line-height: 1.6 !important;
+}
+
+.text-decoration-underline {
+    text-decoration: underline;
+}
+
+.buttons-overlay-container {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 1;
+        transition: opacity 0.15s;
+    }
+}
+
+.btn-group-toggle > .btn, .btn-group-toggle > .btn-group > .btn {
+    border: 1px solid #E0E0E0;
+    color: #828282;
+}
+
+.btn-white:not(:disabled):not(.disabled):active, .btn-white:not(:disabled):not(.disabled).active, .show > .btn-white.dropdown-toggle {
+    background-color: #4F4F4F;
+    color: #fff;
+}
+
+.opacity-0-85 {
+    opacity: 0.85;
+}
+
+.rounded-top-0 {
+    border-top-right-radius: 0px !important;
+    border-top-left-radius:  0px !important;
+}
+
+.rounded-bottom-0 {
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius:  0px !important;
+}
+
+.w-lg-50 {
+    @include media-breakpoint-up(lg) {
+        width: 50%;
+    }
+}
+
+#browse-by-category {
+    ul.list-unstyled {
+        li {
+            padding-left: 0px !important;
+        }
+    }
+}
+
+.box-shadow-green-active {
+    &.active {
+        box-shadow: 0 4px 0 -0.5px #67ae4e
+    }
+}
+
+.text-dark-active {
+    &.active {
+        color: #333333;
+    }
+}
+
+.pagination {
+
+    .page-link:focus {
+        box-shadow: none;
+    }
+
+    .page-link:hover {
+        color: $highlight;
+        background-color: #fff;
+        border: 1px solid $highlight;
+
+        @include media-breakpoint-only(sm) {
+            color: $highlight;
+            background-color: #fff;
+            border: 1px solid $highlight;
+        }
+
+        @include media-breakpoint-up(md) {
+            color: #fff;
+            background-color: $highlight;
+            border-color: $highlight;
+        }
+    }
+
+    .page-item.active .page-link {
+        z-index: 3;
+        color: #fff;
+        background-color: $highlight;
+        border-color: $highlight;
+    }
+}
+
+
+.link--add-to-favorites {
+    color: $body-color;
+    cursor: pointer;
+    font-size: 1.35rem;
+    transition: color 0.12s;
+    &:hover {
+        transition: color 0.12s;
+        color: $pink;
+    }
+}
+
+.text-hover-darker {
+    transition: color 0.12s;
+    &:hover {
+        transition: color 0.12s;
+        color: $darker !important;
+    }
+}
+
+.text-hover-success {
+    transition: color 0.12s;
+    &:hover {
+        transition: color 0.12s;
+        color: #67AE4E !important;
+    }
+}
+
+.text-hover-pink {
+    transition: color 0.12s;
+    &:hover {
+        transition: color 0.12s;
+        color: $pink !important;
+    }
+}
+
+.text-hover-danger {
+    transition: color 0.12s;
+    &:hover {
+        transition: color 0.12s;
+        color: $red !important;
+    }
+}
+
+.img-jumbotron {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    max-width: 1400px;
+    max-height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    @include media-breakpoint-up(sm) {
+        height: auto;
+    }
+}
+
+.categories-container {
+
+    .card {
+        a {
+            h1 {
+                color: #fff;
+            }
+        }
+    }
+
+    .bg-card-bathroom {
+        background: radial-gradient(circle,#7fa7dd 0,#5187d1 100%);
+    }
+
+    .bg-card-laundry {
+        background: radial-gradient(circle,#cdafdc 0,#9e76b6 100%);
+    }
+
+    .bg-card-kitchen {
+        background: linear-gradient(206.57deg,#ffde5f,#ffba31);
+    }
+
+    .bg-card-household {
+        background: radial-gradient(circle,#a0c38c 0,#76ad57 100%);
+    }
+
+    .hover-overlay:after {
+        position: absolute;
+        content: "";
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        opacity: 0;
+        border-bottom-right-radius: 50px;
+        border-top-left-radius: 50px;
+        background-color: #fff;
+        transition: opacity 0.25s;
+    }
+
+    .hover-overlay:hover:after  {
+        opacity: .15;
+        transition: opacity 0.25s;
+    }
+
+    .card-columns {
+
+        column-gap: 2.05rem;
+
+        @include media-breakpoint-only(sm) {
+            column-count: 1;
+        }
+        @include media-breakpoint-only(md) {
+            column-count: 2;
+        }
+        @include media-breakpoint-only(lg) {
+            column-count: 2;
+        }
+        @include media-breakpoint-only(xl) {
+            column-count: 2;
+        }
+    }
+}
+
+.footer {
+
+    .card-columns {
+        @include media-breakpoint-only(sm) {
+            column-count: 1;
+        }
+        @include media-breakpoint-only(md) {
+            column-count: 1;
+        }
+        @include media-breakpoint-only(lg) {
+            column-count: 2;
+        }
+        @include media-breakpoint-only(xl) {
+            column-count: 3;
+        }
+    }
+
+    .footer-border-left {
+        @include media-breakpoint-up(lg) {
+            border-left: 1px solid;
+        }
+    }
+
+    .footer-border-right {
+        @include media-breakpoint-up(lg) {
+            border-right: 1px solid;
+        }
+    }
+}
+
+
+#top-navbar {
+    .nav-link {
+        font-size: 0.93rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 0.95rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.card-columns {
+    @include media-breakpoint-only(sm) {
+        column-count: 1;
+    }
+    @include media-breakpoint-only(md) {
+        column-count: 2;
+    }
+    @include media-breakpoint-only(lg) {
+        column-count: 4;
+    }
+}
+
+@each $breakpoint in $breakpoints {
+    .text-#{$breakpoint}-nowrap {
+        @include media-breakpoint-up(#{$breakpoint}) {
+            white-space: nowrap;
+        }
+    }
+}
+
+@each $size in $width-sizes {
+
+    .w-#{str-replace($size, '%', '')} {
+        width: #{$size} !important;
+    }
+
+    .max-w-#{str-replace($size, '%', '')} {
+        max-width: #{$size} !important;
+    }
+
+    .min-w-#{str-replace($size, '%', '')} {
+        min-width: #{$size} !important;
+    }
+
+    .h-#{str-replace($size, '%', '')} {
+        height: #{$size} !important;
+    }
+
+    .max-h-#{str-replace($size, '%', '')} {
+        max-height: #{$size} !important;
+    }
+
+    .min-h-#{str-replace($size, '%', '')} {
+        min-height: #{$size} !important;
+    }
+
+    @each $breakpoint in $breakpoints {
+
+        .w-#{$breakpoint}-#{str-replace($size, '%', '')} {
+            @include media-breakpoint-up(#{$breakpoint}) {
+                width: #{$size} !important;
+            }
+        }
+
+        .max-w-#{$breakpoint}-#{str-replace($size, '%', '')} {
+            @include media-breakpoint-up(#{$breakpoint}) {
+                max-width: #{$size} !important;
+            }
+        }
+
+        .min-w-#{$breakpoint}-#{str-replace($size, '%', '')} {
+            @include media-breakpoint-up(#{$breakpoint}) {
+                min-width: #{$size} !important;
+            }
+        }
+
+        .h-#{$breakpoint}-#{str-replace($size, '%', '')} {
+            @include media-breakpoint-up(#{$breakpoint}) {
+                height: #{$size} !important;
+            }
+        }
+
+        .max-h-#{$breakpoint}-#{str-replace($size, '%', '')} {
+            @include media-breakpoint-up(#{$breakpoint}) {
+                max-height: #{$size} !important;
+            }
+        }
+
+        .min-h-#{$breakpoint}-#{str-replace($size, '%', '')} {
+            @include media-breakpoint-up(#{$breakpoint}) {
+                min-height: #{$size} !important;
+            }
+        }
+    }
+}
+
+@each $size in $font-sizes {
+    @each $side in $sides {
+        .p#{ str-slice($side, 0, 1) }-#{$size} {
+            padding-#{$side}: #{ str-replace($size, '-', '.') } !important;
+        }
+        .m#{ str-slice($side, 0, 1) }-#{$size} {
+            margin-#{$side}: #{ str-replace($size, '-', '.') } !important;
+        }
+        .m#{ str-slice($side, 0, 1) }--#{$size} {
+            margin-#{$side}: -#{ str-replace($size, '-', '.') } !important;
+        }
+    }
+
+    @each $breakpoint in $breakpoints {
+
+        .font-size-only-#{$breakpoint}-#{$size} {
+            @include media-breakpoint-up(#{$breakpoint}) {
+                font-size: #{ str-replace($size, '-', '.') };
+            }
+        }
+
+        .font-size-#{$breakpoint}-#{$size} {
+            @include media-breakpoint-up(#{$breakpoint}) {
+                @if $size=='1-2rem' and $breakpoint=='md' {
+                    line-height: 1.67rem;
+                }
+                @else {
+
+                    @if $size=='3rem' {
+                        line-height: 3.5rem;
+                    }
+                    @else if $size=='2-2rem' {
+                        line-height: 2.6rem;
+                    }
+                    @else if $size=='3-7rem' {
+                        line-height: 4.2rem;
+                    }
+                    @else if $size=='2-6rem' {
+                        line-height: 2.4rem;
+                    }
+                    @else if $size=='2-5rem' {
+                        line-height: 2.8rem;
+                    }
+                    @else {
+                        line-height: #{ str-replace($size, '-', '.') };
+                    }
+                }
+                font-size: #{ str-replace($size, '-', '.') };
+            }
+        }
+
+        .line-height-#{$breakpoint}-#{$size} {
+            @include media-breakpoint-up(#{$breakpoint}) {
+                line-height: #{ str-replace($size, '-', '.') };
+            }
+        }
+    }
+
+    .font-size-#{$size} {
+        font-size: #{ str-replace($size, '-', '.') };
+        @if $size=='1-2rem' {
+            line-height: 1.67rem;
+        }
+        @else if $size=='2rem' {
+            line-height: 2.3rem;
+        }
+        @else if $size=='1-9rem' {
+            line-height: 2.3rem;
+        }
+        @else {
+            line-height: #{ str-replace($size, '-', '.') };
+        }
+    }
+
+    .line-height-#{$size} {
+        line-height: #{ str-replace($size, '-', '.') };
+    }
+}
+
+#main-navbar.offcanvas-collapse, #top-navbar.offcanvas-collapse {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0;
+    overflow-y: auto;
+    transition: -webkit-transform .4s ease-in-out;
+    transition: transform 0.15s ease-in-out;
+    transition: opacity 0.15s, transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+
+    &.open {
+
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+
+        > div, >ul{
+            width: 100%;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        opacity: 1;
+        z-index: inherit;
+        position: inherit;
+        top: inherit;
+        bottom: inherit;
+        right: inherit;
+        width: inherit;
+        overflow-y: inherit;
+        background-color: inherit;
+        transition: -webkit-transform .4s ease-in-out;
+        transition: transform .4s ease-in-out;
+        transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+        -webkit-transform: inherit;
+        transform: inherit;
+
+        &.open {
+            box-shadow: unset !important;
+        }
+    }
+
+    @include media-breakpoint-only(sm) {
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 83%;
+        overflow-y: auto;
+        transition: -webkit-transform .4s ease-in-out;
+        transition: transform .4s ease-in-out;
+        transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+        -webkit-transform: translateX(-200%);
+        transform: translateX(-200%);
+
+        &.open {
+            -webkit-transform: translateX(-21%);
+            transform: translateX(-21%);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+        }
+    }
+}
+
+.jp-card .jp-card-front .jp-card-lower .jp-card-number {
+    font-size: 22px !important;
+}

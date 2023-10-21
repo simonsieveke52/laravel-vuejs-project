@@ -1,0 +1,129 @@
+html, body {
+	height: 100%;
+}
+
+.bg-main-jumbotron{
+	background-image: url('/images/jumbotron.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.bg-home-banner{
+	background-image: url('/images/home_baner.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.bg-green-gradient{
+	background: rgb(18,97,3);
+	background: linear-gradient(90deg, rgba(18,97,3,1) 35%, rgba(78,133,5,1) 100%);
+}
+
+.border-radius-0{
+	border-radius: 0px !important;
+}
+
+.rounded-xl {
+	border-radius: 0.4rem !important
+}
+
+.flex {
+	display: flex;
+}
+
+.font-open-sans{
+	font-family: 'Archivo', sans-serif !important;
+}
+
+.font-open-poppins{
+	font-family: 'Poppins', sans-serif !important;
+}
+
+.font-weight-extra-bold{
+	font-weight: 900 !important;
+}
+
+.box-shadow{
+	box-shadow: 0 0 35px -10px #000 !important;
+}
+
+.sharder-icon {
+	line-height: 1.3;
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.max-w-100px{
+	max-width: 100px !important;
+}
+
+.min-w-100px{
+	min-width: 100px !important;
+}
+
+.max-h-100px{
+	max-height: 100px !important;
+}
+
+.min-h-300px{
+	min-height: 300px !important;
+}
+
+.max-h-300px{
+	max-height: 300px !important;
+}
+
+.mw-25{
+	max-width: 25% !important;
+}
+
+.mw-50{
+	max-width: 50% !important;
+}
+
+.mw-75{
+	max-width: 75% !important;
+}
+
+.text-decoration-line-through{
+	text-decoration: line-through !important;
+}
+
+.items-center {
+	align-items: center;
+}
+
+
+#v-pills-customer-tabs{
+	.nav-link{
+		color: $nav-pills-link-active-bg;
+
+		&.active{
+			color: #fff;
+		}
+	}
+}
+
+.button--circle {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #f1f1f1;
+	transition: all .4s ease;
+	&:hover {
+		background: #e5e5e5;
+	}
+}

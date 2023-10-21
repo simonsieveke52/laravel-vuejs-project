@@ -1,0 +1,54 @@
+{
+    "name": "Natural house",
+    "short_name": "Natural house",
+    "icons": [
+        {
+            "src": "/favicons/favicon-32.png",
+            "sizes": "32x32",
+            "types": "image/png"
+        },
+        {
+            "src": "/favicons/favicon-128.png",
+            "sizes": "128x128",
+            "types": "image/png"
+        },
+        {
+            "src": "/favicons/favicon-152.png",
+            "sizes": "152x152",
+            "types": "image/png"
+        },
+        {
+            "src": "/favicons/favicon-167.png",
+            "sizes": "167x167",
+            "types": "image/png"
+        },
+        {
+            "src": "/favicons/favicon-180.png",
+            "sizes": "180x180",
+            "types": "image/png"
+        },
+        {
+            "src": "/favicons/favicon-192.png",
+            "sizes": "192x192",
+            "types": "image/png"
+        },
+        {
+            "src": "/favicons/favicon-196.png",
+            "sizes": "196x196",
+            "types": "image/png"
+        },
+        {
+            "src": "/favicons/favicon-196.png",
+            "sizes": "196x196",
+            "types": "image/png"
+        },
+        {
+            "src": "/favicons/favicon-144.png",
+            "sizes": "144x144",
+            "types": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

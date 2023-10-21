@@ -1,0 +1,193 @@
+// Body
+$body-bg: #fff;
+$body-color: #222222;
+
+// Typography
+$font-family-sans-serif: 'Archivo', sans-serif;
+$font-family-poppins-serif: 'Poppins', sans-serif;
+$font-size-base: 0.95rem;
+$line-height-base: 1.4;
+
+// Dropdown
+$dropdown-border-radius: 0;
+$dropdown-spacer: 0;
+
+// Link
+$link-color: #777777;
+$link-hover-decoration: none;
+$link-hover-color: #000;
+
+// Primary theme color
+$highlight: #134E72;
+$pink: #c72948;
+$soft-dark: #777777;
+$green: #27AE60;
+$white: #fff;
+$gray: #F2F2F2;
+$black: #000;
+$dark: #404040;
+$dark-1: #737373;
+$dark-2: #333333;
+$dark-3: #4F4F4F;
+$dark-4: #A0A0A0;
+$dark-5: #383838;
+$darker: #2F2F2F;
+$secondary: #E5E5E5;
+$secondary-1: #F8F8F8;
+$muted: #BBBBBB;
+$muted-1: #E0E0E0;
+$muted-2: #666666;
+$muted-3: #555555;
+$muted-4: #828282;
+$muted-5: #BDBDBD;
+$muted-6: #DEDEDE;
+$yellow: #EC6C00;
+
+
+// Nav tabs
+$nav-pills-link-active-bg: #222222;
+
+// Theme
+$theme-colors: (
+    "highlight" : $highlight,
+    "green": $green,
+    "white": $white,
+    "gray": $gray,
+    "black": $black,
+    "soft-dark": $soft-dark,
+    "dark": $dark,
+    "dark-1": $dark-1,
+    "dark-2": $dark-2,
+    "dark-3": $dark-3,
+    "dark-4": $dark-4,
+    "dark-5": $dark-5,
+    "darker": $darker,
+    "secondary": $secondary,
+    "secondary-1": $secondary-1,
+    "pink": $pink,
+    "muted": $muted,
+    "muted-1": $muted-1,
+    "muted-2": $muted-2,
+    "muted-3": $muted-3,
+    "muted-4": $muted-4,
+    "muted-5": $muted-5,
+    "muted-6": $muted-6,
+);
+
+$container-max-widths: ( 
+    lg: 1280px,
+    xl: 1242px,
+);
+
+// Extra padding and margins
+$spaceamounts: (6, 7, 8);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space * 0.8}rem !important;
+    }
+  
+    .p#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space * 0.8}rem !important;
+    }
+  }
+}
+
+$sides: ('top', 'right', 'bottom', 'left');
+$breakpoints: ('sm', 'md', 'lg', 'xl');
+
+$font-sizes: (
+    '0-2rem',
+    '0-6rem',
+    '0-7rem',
+    '0-8rem',
+    '0-85rem',
+    '0-88rem',
+    '0-9rem',
+    '0-95rem',
+    '1rem',
+    '1-1rem',
+    '1-2rem',
+    '1-3rem',
+    '1-35rem',
+    '1-5rem',
+    '1-6rem',
+    '1-7rem',
+    '1-8rem',
+    '1-9rem',
+    '2rem',
+    '2-1rem',
+    '2-2rem',
+    '2-4rem',
+    '2-5rem',
+    '2-6rem',
+    '2-8rem',
+    '2-9rem',
+    '3rem',
+    '3-2rem',
+    '3-5rem',
+    '3-7rem',
+    '3-8rem',
+    '3-9rem',
+    '4rem',
+    '5rem',
+    '5-3rem',
+    '5-8rem'
+);
+
+$width-sizes: (
+    '44px',
+    '50px',
+    '65px',
+    '70px',
+    '80px',
+    '90px',
+    '100px',
+    '105px',
+    '120px',
+    '125px',
+    '130px',
+    '160px',
+    '169px',
+    '170px',
+    '175px',
+    '180px',
+    '185px',
+    '190px',
+    '200px',
+    '210px',
+    '215px',
+    '222px',
+    '240px',
+    '250px',
+    '260px',
+    '280px',
+    '300px',
+    '306px',
+    '335px',
+    '340px',
+    '345px',
+    '360px',
+    '400px',
+    '404px',
+    '420px',
+    '434px',
+    '450px',
+    '460px',
+    '466px',
+    '490px',
+    '500px',
+    '540px',
+    '509px',
+    '530px',
+    '600px',
+    '640px',
+    '650px',
+    '705px',
+    '860px',
+    '998px',
+    '1000px',
+    '1440px',
+);

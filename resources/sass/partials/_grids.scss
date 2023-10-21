@@ -1,0 +1,18 @@
+.grid {
+    &--products--related .card-deck .row {
+        height: auto;
+        animation: fade 0.4s ease;
+    }
+
+    &--brands {
+        .grid__card-deck__card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            img {
+                max-height: 30px;
+                max-width: 260px;
+            }
+        }
+    }
+}

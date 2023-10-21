@@ -1,0 +1,96 @@
+.sidebar {
+    &__block {
+        h3 {
+            border-bottom: 2px solid $grey-2;
+            font-size: 1rem;
+            a {
+                font-weight: bolder;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        &--category {
+            li {
+                a {
+                    position: relative;
+                    font-size: .7rem;
+                    &:before {
+                        content: '>';
+                        color: $grey-2;
+                        position: absolute;
+                        left: 5px;
+                    }
+                    &.depth-1:before {
+                        left:12px;
+                    }
+                    &.depth-2:before {
+                        left:36px;
+                    }
+                    &.depth-3:before {
+                        left:52x;
+                    }
+                }
+            }
+        }
+    }
+    .filter {
+        li {
+            position: relative;
+            input[type=checkbox] {
+                opacity: 0;
+                position: absolute;
+                left: -15px;
+    
+                + label{
+                    display: block;
+                    margin: 0.2em;
+                    cursor: pointer;
+                    padding: 0.2em;
+                    line-height: 1.1rem;
+                    &:before {
+                        content: "\2714";
+                        border: 0.1em solid #000;
+                        border-radius: 0.2em;
+                        display: inline-block;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        padding-left: 0.2rem;
+                        padding-bottom: 0.5rem;
+                        margin-right: 0.2rem;
+                        vertical-align: bottom;
+                        color: transparent;
+                        transition: .2s;
+                        line-height: 1.1rem;
+                    }
+                    &:active:before {
+                        transform: scale(0);
+                    }
+                }
+                  
+                  
+                &:checked + label:before {
+                    background-color: $highlight;
+                    border-color: $black;
+                    color: #fff;
+                }
+                  
+                &:disabled + label:before {
+                    transform: scale(1);
+                    border-color: $secondary;
+                }
+                /*Adding focus styles on the outer-box of the fake checkbox*/
+                &:focus + label:before {
+                    outline: rgb(59, 153, 252) auto 5px;
+                }
+    
+                &:checked:disabled + label:before {
+                    transform: scale(1);
+                    background-color: lighten($highlight, .2);
+                    border-color: lighten($black, .2);
+                }
+            }
+              
+        }
+    }
+}
